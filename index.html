@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        body{
+            background:linear-gradient(to top left, rgb(9, 240, 9) 0%, rgb(12, 188, 211) 100%);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        table{
+            background: rgba(255, 255, 255, 0.4);
+            margin:60px auto;
+            padding: 10px 20px 10px 10px;
+            border-radius: 15px;
+        }
+
+        #tb{
+            border-radius: 2px;
+            width: 120px;
+            margin-right: 40px;
+            height: 25px;
+            font-size: 15px;
+        }
+
+        input{
+            font-size:x-large;
+            width: 40px;
+            height: 40px;
+            margin: 9px 0 9px 0;
+
+        }
+        input:hover{
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1:hover{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>CASIO</h1>
+    <table>
+        <tr>
+            <td colspan="3"><input type="text" id="tb"></td>
+            <td><input type="button" value="C" onclick="clr()"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="see('1')"></td>
+            <td><input type="button" value="2" onclick="see('2')"></td>
+            <td><input type="button" value="3" onclick="see('3')"></td>
+            <td><input type="button" value="/" onclick="see('/')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4" onclick="see('4')"></td>
+            <td><input type="button" value="5" onclick="see('5')"></td>
+            <td><input type="button" value="6" onclick="see('6')"></td>
+            <td><input type="button" value="-" onclick="see('-')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="7" onclick="see('7')"></td>
+            <td><input type="button" value="8" onclick="see('8')"></td>
+            <td><input type="button" value="9" onclick="see('9')"></td>
+            <td><input type="button" value="+" onclick="see('+')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="." onclick="see('.')"></td>
+            <td><input type="button" value="0" onclick="see('0')"></td>
+            <td><input type="button" value="=" onclick="solve()"></td>
+            <td><input type="button" value="*" onclick="see('*')"></td>
+        </tr>
+    </table>
+
+   <script>
+       
+            function clr(){
+                document.getElementById('tb').value="";
+            }
+
+            function see(x){
+                document.getElementById('tb').value+=x;
+            }
+
+            function solve(){
+                let z=document.getElementById('tb').value;
+                document.getElementById('tb').value=eval(z);
+            }
+
+            setTimeout(function(){alert('Welcome')},3000);
+   </script> 
+</body>
+</html>
